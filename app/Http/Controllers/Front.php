@@ -26,19 +26,20 @@ use ValidatesRequests;
 
     public function register(Request $request)
     {
+        //return registration errors
         $errors = new MessageBag;
 
+        //validate registration forms
         $this->validate($request, [
             'name'=> 'required',
             'email'=>'required|unique:users|email',
             'password'=>'required|min:6'
             ]);
 
-
-
         $email = $request['email'];
         $name = $request['name'];
 
+        //Register users
         $user = new user();
         $user->name = $name;
         $user->email = $email;
@@ -46,6 +47,7 @@ use ValidatesRequests;
 
         $user->save();
 
+        //Login user
         Auth::login($user);
         $cart = Cart::content();
 
@@ -82,11 +84,12 @@ use ValidatesRequests;
         return redirect()->route('shop');
     }
 
-    public function cart(Request $request){
-            $product_id = $request['id'];
-            $product_name = $request['name'];
-            $product_price = $request['price'];
-            Cart::add(array('id' => $product_id, 'name'=>$product_name, 'qty'=>1, 'price'=>$product_price));
+    public function cart(Request $request)
+    {
+        $product_id = $request['id'];
+        $product_name = $request['name'];
+        $product_price = $request['price'];
+        Cart::add(array('id' => $product_id, 'name'=>$product_name, 'qty'=>1, 'price'=>$product_price));
         $cart = Cart::content();
 
         /**

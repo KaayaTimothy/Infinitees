@@ -100,5 +100,35 @@ class ProductController extends BaseController
 
       return view('recently-viewed', ['categories'=>$categories,'products'=>$products, 'cart'=>$cart]);
     }
+    public function recentlyviewed24()
+    {
+        /**
+         *return all departments with their categories
+         */
+        $categories = Category::has('subcategories', '>=','0')->get();
+
+        $products = DB::table('products')->orderBy('views','desc')->limit(24)->paginate(12);
+
+
+        $cart = Cart::content();
+
+
+        return view('recently-viewed', ['categories'=>$categories,'products'=>$products, 'cart'=>$cart]);
+    }
+    public function recentlyviewedall()
+    {
+        /**
+         *return all departments with their categories
+         */
+        $categories = Category::has('subcategories', '>=','0')->get();
+
+        $products = DB::table('products')->orderBy('views','desc');
+
+
+        $cart = Cart::content();
+
+
+        return view('recently-viewed', ['categories'=>$categories,'products'=>$products, 'cart'=>$cart]);
+    }
 }
 ?>

@@ -22,8 +22,15 @@
                         <ul>
                             <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                             </li>
-                            <li><a href="register.html">Regiter</a>
+                            <li><a href="{{route('userregister')}}">Register</a>
                             </li>
+                            <?php if (Auth::check())
+                                    { if (Auth::user()->name=='admin'){?>
+
+                                        <li><a href="{{route('admin')}}" >Admin</a></li>
+                            <?php
+                            }}
+                                ?>
                         </ul>
 
                         <hr class="hidden-md hidden-lg hidden-sm">

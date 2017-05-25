@@ -11,6 +11,7 @@
 |
 */
 
+//landing page
 Route::get('/', 'NavController@shop');
 
 Route::get('/shop', [
@@ -18,8 +19,24 @@ Route::get('/shop', [
 	'uses'=>'NavController@shop']);
 
 Route::get('/userregister', [
-	'as'=>'userregister',
-	'uses'=>'NavController@userregister']);
+    'as'=>'userregister',
+    'uses'=>'NavController@userregister']);
+
+Route::get('/Admin', [
+    'as'=>'admin',
+    'uses'=>'NavController@admin']);
+
+Route::get('/admin/{tablename}', [
+    'as'=>'table.show',
+    'uses'=>'NavController@table']);
+
+Route::get('/admin/insert/{tablename}', [
+    'as'=>'table.insert',
+    'uses'=>'NavController@insert']);
+
+Route::post('admin/submit', [
+    'as'=>'table.submit',
+    'uses'=>'NavController@submit']);
 
 Route::get('/shop/product/{productname}', [
 	'as'=>'product.show',
@@ -37,6 +54,16 @@ Route::get('/shop/recently-viewed', [
 	'as'=>'recently.viewed',
 	'uses'=>'ProductController@recentlyviewed'
 	]);
+
+Route::get('/shop/recently-viewed24', [
+    'as'=>'recently.viewed24',
+    'uses'=>'ProductController@recentlyviewed24'
+]);
+
+Route::get('/shop/recently-viewedall', [
+    'as'=>'recently.viewedall',
+    'uses'=>'ProductController@recentlyviewedall'
+]);
 
 Route::post('/search', [
 	'as'=>'search',

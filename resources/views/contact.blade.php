@@ -15,7 +15,7 @@ InfinitechStudio
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li><a href="{{route('shop')}}">Home</a>
                         </li>
                         <li>Contact</li>
                     </ul>
@@ -34,28 +34,17 @@ InfinitechStudio
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked">
                                 <li>
-                                    <a href="text.html">Text page</a>
+                                    <a href="{{route('contact')}}" class="active">Contact page</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact page</a>
-                                </li>
-                                <li>
-                                    <a href="faq.html">FAQ</a>
+                                    <a href="#">FAQ</a>
                                 </li>
 
                             </ul>
 
                         </div>
                     </div>
-
                     <!-- *** PAGES MENU END *** -->
-
-
-                    <div class="banner">
-                        <a href="#">
-                            <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
-                        </a>
-                    </div>
                 </div>
 
                 <div class="col-md-9">
@@ -70,31 +59,21 @@ InfinitechStudio
                         <hr>
 
                         <div class="row">
-                            <div class="col-sm-4">
-                                <h3><i class="fa fa-map-marker"></i> Address</h3>
-                                <p>13/25 New Avenue
-                                    <br>New Heaven
-                                    <br>45Y 73J
-                                    <br>England
-                                    <br>
-                                    <strong>Great Britain</strong>
-                                </p>
-                            </div>
+
                             <!-- /.col-sm-4 -->
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <h3><i class="fa fa-phone"></i> Call center</h3>
-                                <p class="text-muted">This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication.</p>
-                                <p><strong>+33 555 444 333</strong>
+                                <p class="text-muted"></p>
+                                <p><strong>+256 706 728046</strong>
                                 </p>
                             </div>
                             <!-- /.col-sm-4 -->
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <h3><i class="fa fa-envelope"></i> Electronic support</h3>
-                                <p class="text-muted">Please feel free to write an email to us or to use our electronic ticketing system.</p>
+                                <p class="text-muted">Please feel free to write an email to us.</p>
                                 <ul>
-                                    <li><strong><a href="mailto:">info@fakeemail.com</a></strong>
+                                    <li><strong><a href="mailto:">info@infinitee-ug.com</a></strong>
                                     </li>
-                                    <li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>
                                 </ul>
                             </div>
                             <!-- /.col-sm-4 -->
@@ -102,10 +81,6 @@ InfinitechStudio
                         <!-- /.row -->
 
                         <hr>
-
-                        <div id="map">
-
-                        </div>
 
                         <hr>
                         <h2>Contact form</h2>

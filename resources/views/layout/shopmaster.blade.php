@@ -35,7 +35,7 @@
 
     <script src="{{ URL::asset('assets/js/respond.min.js')}}"></script>
     
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="{{ URL::asset('favicon.png')}}">
 
 
 
